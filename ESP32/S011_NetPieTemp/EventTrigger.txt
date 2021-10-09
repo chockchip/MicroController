@@ -1,0 +1,22 @@
+{
+  "enabled": true,
+  "trigger": [
+    {
+      "action": "test_notify",
+      "event": "SHADOW.UPDATED",
+      "condition": "(($.temperature > 25) && ($.temperature - $$.temperature) > 0.1)",
+      "msg": "My temperature is {{$.temperature}} not equal {{$$.temperature}}",
+      "option": {
+        "linetoken": "BH0OMQ3UYZlUCIrrIhFxagPYs9RFLUbGhnfFmxptshQ"
+      }
+    },
+    {
+      "action": "test_notify",
+      "event": "DEVICE.STATUSCHANGED",
+      "msg": "My Device {{$.statustext}}, statuscode: {{$.status}}",
+      "option": {
+        "linetoken": "BH0OMQ3UYZlUCIrrIhFxagPYs9RFLUbGhnfFmxptshQ"
+      }
+    }
+  ]
+}
